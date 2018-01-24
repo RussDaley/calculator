@@ -51,13 +51,16 @@ class App extends Component {
     this.setState({ displayWindow: operatorData });
     operatorClicked = true;
   }
+  resetButton = () => {
+    this.reset();
+    this.setState({ displayWindow: 0 });
+  }
   reset = () => {
     firstNumber = '';
     operatorClicked = false;
     secondNumber = '';
     this.setState({ firstNumber: 0 });
     this.setState({ secondNumber: 0 });
-    this.setState({ displayWindow: 0 });
   }
   equalsCallBack = () => {
     if (this.state.operator === '+') {
@@ -73,17 +76,19 @@ class App extends Component {
       this.setState({ total: parseInt(this.state.firstNumber, 10)/parseInt(this.state.secondNumber, 10) });
       this.setState({ displayWindow: parseInt(this.state.firstNumber, 10)/parseInt(this.state.secondNumber, 10) });
     }
-    this.reset
+    this.reset()
   }
   render() {
     return (
       <div className="App">
-{/*        <p>firstNumber: {this.state.firstNumber}</p>
+{/* Use this for debugging
+        <p>firstNumber: {this.state.firstNumber}</p>
         <p>operator: {this.state.operator}</p>
         <p>secondNumber: {this.state.secondNumber}</p>
         <p>total: {this.state.total}</p> */}
         <div className="calculator">
           <h1 className="display-window">{this.state.displayWindow}</h1>
+          <span className="resetButton" onClick={this.resetButton}>Reset</span>
           <div className="numberContainer">
             <CustButton 
               title="7"
@@ -139,7 +144,6 @@ class App extends Component {
               callbackfromparrent={this.operatorCallBack}></CustButton>
           </div>
         </div>
-        <span className="resetButton" onClick={this.reset}>Reset</span>
       </div>
     );
   }

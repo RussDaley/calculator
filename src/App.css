@@ -40,6 +40,14 @@
   direction: rtl;
   overflow-x: hidden;
 }
+.resetButton {
+    display: block;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #ff5d43;
+    text-align: left;
+    padding-left: 10px;
+}
 .numberContainer {
   display: inline-block;
   width: 75%;
@@ -70,9 +78,3 @@ button.equals {
   width: 66%;
 }
 
-
-.resetButton {
-  cursor: pointer;
-  text-decoration: underline;
-  color: blue;
-}
