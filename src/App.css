@@ -69,3 +69,10 @@ button.equals {
   background: #f66700;
   width: 66%;
 }
+
+
+.resetButton {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}

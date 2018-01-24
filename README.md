@@ -12,3 +12,8 @@ In the initial commit I learned a few things:
   2. when an operator button is pressed, save firstNumber into the state. and also save the selected operartor as another state item.
   3. repet 1. for secondNumber.
   4. when equals is pressed have it do it's thing.
+
+### My above plan worked perfectly,
+ - I added more numbers and operators
+ - I added some styles
+ - I wasn't sure how to make the reset button fit on the actual calculator so I just put it on the page.

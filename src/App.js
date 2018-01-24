@@ -18,18 +18,9 @@ class CustButton extends Component{
   }
 }
 
-
-// Maybe I could do it this way:
-  //create a different type of button for the operators that would change to a different state item, then when equals is hit it will do it's thing
-  //something like:
-  // this.state = {
-  //   firstNumber: '',
-  //   operator: '',
-  //   secondNumber: ''
-  // }
-var firstNumber = 0,
+var firstNumber = '',
   operatorClicked = false,
-  secondNumber = 0;
+  secondNumber = '';
 
 class App extends Component {
   constructor (props) {
@@ -60,6 +51,14 @@ class App extends Component {
     this.setState({ displayWindow: operatorData });
     operatorClicked = true;
   }
+  reset = () => {
+    firstNumber = '';
+    operatorClicked = false;
+    secondNumber = '';
+    this.setState({ firstNumber: 0 });
+    this.setState({ secondNumber: 0 });
+    this.setState({ displayWindow: 0 });
+  }
   equalsCallBack = () => {
     if (this.state.operator === '+') {
       this.setState({ total: parseInt(this.state.firstNumber, 10)+parseInt(this.state.secondNumber, 10) });
@@ -74,11 +73,7 @@ class App extends Component {
       this.setState({ total: parseInt(this.state.firstNumber, 10)/parseInt(this.state.secondNumber, 10) });
       this.setState({ displayWindow: parseInt(this.state.firstNumber, 10)/parseInt(this.state.secondNumber, 10) });
     }
-    firstNumber = 0;
-    operatorClicked = false;
-    secondNumber = 0;
-    this.setState({ firstNumber: 0 });
-    this.setState({ secondNumber: 0 });
+    this.reset
   }
   render() {
     return (
@@ -144,6 +139,7 @@ class App extends Component {
               callbackfromparrent={this.operatorCallBack}></CustButton>
           </div>
         </div>
+        <span className="resetButton" onClick={this.reset}>Reset</span>
       </div>
     );
   }
