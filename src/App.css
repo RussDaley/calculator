@@ -26,3 +26,46 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.calculator {
+  width: 300px;
+  background: #414141;
+}
+.display-window {
+  background-color: #414141;
+  color: orange;
+  padding: 20px 10px;
+  margin: 0;
+  direction: rtl;
+  overflow-x: hidden;
+}
+.numberContainer {
+  display: inline-block;
+  width: 75%;
+}
+.operatorsContainer {
+  display: inline-block;
+  width: 25%;
+  button {
+    background: #ffaf1c;
+  }
+}
+.operatorsContainer button {
+  background: #ffaf1c;
+}
+button {
+  padding: 10px;
+  background: gray;
+  display: inline-block;
+  font-size: 30px;
+  width: 33%;
+  border: 2px solid #414141;
+}
+button.operator {
+  width: 100%;
+}
+button.equals {
+  background: #f66700;
+  width: 66%;
+}
